@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-import re
-import glob
-from sys import argv
-
 # __name__ = "osu-cleaner-cli"
 __version__ = "1.0.0"
 __author__ = "Layerex"
 __doc__ = "A simple program on python to remove unneeded files from osu! Songs folder"
 __usage__ = "Usage: %s [-h --help] [-v --version] [<path to the osu songs directory> [--delete-videos] \
 [--delete-hitsounds] [--delete-backgrounds] [--delete-skin-elements] [--delete-storyboard-elements]]"
+
+import os
+import re
+import glob
+from sys import argv
 
 extensions = {
     "videos": ("avi", "flv", "mp4", "wmv"),
