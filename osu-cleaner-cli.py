@@ -3,8 +3,8 @@
 
 import os
 import re
+import glob
 from sys import argv
-from glob import glob
 
 # __name__ = "osu-cleaner-cli"
 __version__ = "1.0.0"
@@ -132,7 +132,7 @@ def main():
             os.chdir(directory)
             # Recursively getting all files in the directory
             # glob() won't handle '[' and ']' characters the usual way, so replaces used
-            files = glob(os.getcwd().replace('[','[[]').replace(']','[]]') + '/**/*.*', recursive=True)
+            files = glob.glob(glob.escape(os.getcwd()) + '/**/*.*', recursive=True)
             if not files == []:
                 for file in files:
                     file_lowercase = file.lower()
