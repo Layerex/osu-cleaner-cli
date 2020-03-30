@@ -131,7 +131,6 @@ def main():
             print(os.path.basename(directory))
             os.chdir(directory)
             # Recursively getting all files in the directory
-            # glob() won't handle '[' and ']' characters the usual way, so replaces used
             files = glob.glob(glob.escape(os.getcwd()) + '/**/*.*', recursive=True)
             if not files == []:
                 for file in files:
