@@ -4,4 +4,4 @@ Script to remove unwanted files from osu! Songs folder. A rewrite of [that](http
 ```
 python3 osu-cleaner-cli.py [<path to osu songs directory> [--delete-videos] [--delete-hitsounds] [--delete-backgrounds] [--delete-skin-elements] [--delete-storyboard-elements]] [[-h | --help] | [-v | --version]]
 ```
-If no arguments/only filepath specified program will start in interactive mode
+If no arguments or only filepath specified script will start in interactive mode.
