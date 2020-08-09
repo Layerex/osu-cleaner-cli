@@ -144,11 +144,11 @@ def main():
                             or (os.path.basename(file_lowercase).startswith(skin_file_names)
                                 and file.endswith(extensions["images"]) and delete_skin_elements):
                         files_to_remove.add(os.path.abspath(file))
-                    # The code assumes that storyboards are contained only in .osb files, so some of the
-                    # storyboards might be occasionally deleted. It can be probably fixed by adding additional
-                    # regex for backgrounds
-                    # Lines in osu files with those look somewhat like 0,0,"background.png",0,0
-                    # The issue probably will be fixed in the future
+                    # The code assumes that storyboards are contained only in .osb storyboard files
+                    # (those also may be in .osu beatmap files, under [Events] section), so some of the
+                    # storyboard files might be occasionally deleted. It can be fixed by adding additional
+                    # regex for searching only for backgrounds.
+                    # Lines in .osu files specifying backgrounds look like 0,0,"background.png",0,0
                     elif file_lowercase.endswith(extensions["beatmaps"]) and delete_backgrounds:
                         for extracted_file_path in use_re_on_file(file, quotation_marks_re):
                             extracted_file_path_lowercase = extracted_file_path.lower()
