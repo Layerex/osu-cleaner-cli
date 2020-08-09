@@ -181,7 +181,7 @@ def ask_yes_no(question_string):
 
 
 def use_re_on_file(file, regex):
-    with open(file, "r") as file:
+    with open(file, "r", errors="ignore") as file:
         return regex.findall(file.read())
 
 
