@@ -77,6 +77,7 @@ def main():
 
     if len(argv) >= 2:
         working_directory_path = argv[1]
+        os.chdir(working_directory_path)
     if len(argv) < 2:
         interactive_mode = True
     elif len(argv) == 2:
@@ -103,6 +104,7 @@ def main():
     if interactive_mode:
         if len(argv) < 2:
             working_directory_path = input("Enter the path to your osu! songs folder: ")
+        os.chdir(working_directory_path)
         delete_videos = ask_yes_no("Do you want to delete all videos from your osu! songs folder?")
         delete_hitsounds = ask_yes_no("Do you want to delete all hitsounds from your osu! songs folder?")
         delete_backgrounds = ask_yes_no("Do you want to delete all backgrounds from your osu! songs folder?")
@@ -122,8 +124,6 @@ def main():
         delete_storyboard_elements = False
 
     print("Scanning...")
-    os.chdir(working_directory_path)
-
     directories = os.listdir(".")
     files_to_remove = set()
     for directory in directories:
