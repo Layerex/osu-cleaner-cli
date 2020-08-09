@@ -89,15 +89,15 @@ def main():
         interactive_mode = True
     else:
         for arg in range(2, len(argv)):
-            if arg == "--delete-videos":
+            if argv[arg] == "--delete-videos":
                 delete_videos = True
-            elif arg == "--delete-hitsounds":
+            elif argv[arg] == "--delete-hitsounds":
                 delete_hitsounds = True
-            elif arg == "--delete-backgrounds":
+            elif argv[arg] == "--delete-backgrounds":
                 delete_backgrounds = True
-            elif arg == "--delete-skin-elements":
+            elif argv[arg] == "--delete-skin-elements":
                 delete_skin_elements = True
-            elif arg == "--delete-storyboard-elements":
+            elif argv[arg] == "--delete-storyboard-elements":
                 delete_storyboard_elements = True
 
     if interactive_mode:
