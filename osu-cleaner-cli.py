@@ -75,16 +75,13 @@ def main():
     delete_skin_initialization_files = False
     interactive_mode = False
 
-    if len(argv) >= 2:
-        working_directory_path = argv[1]
-        os.chdir(working_directory_path)
     if len(argv) < 2:
         interactive_mode = True
     elif len(argv) == 2:
         if argv[1] in {"-v", "--version"}:
             print(__version__)
             exit(0)
-        if argv[1] in {"-h", "--help"}:
+        elif argv[1] in {"-h", "--help"}:
             print(__usage__ % argv[0])
             exit(0)
         interactive_mode = True
@@ -101,8 +98,12 @@ def main():
             elif argv[arg] == "--delete-storyboard-elements":
                 delete_storyboard_elements = True
 
+    if len(argv) >= 2:
+        working_directory_path = argv[1]
+        os.chdir(working_directory_path)
+
     if interactive_mode:
-        if len(argv) < 2:
+        if working_directory_path:
             working_directory_path = input("Enter the path to your osu! songs folder: ")
         os.chdir(working_directory_path)
         delete_videos = ask_yes_no("Do you want to delete all videos from your osu! songs folder?")
