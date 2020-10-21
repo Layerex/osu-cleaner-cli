@@ -5,7 +5,7 @@
 __version__ = "1.0.0"
 __author__ = "Layerex"
 __doc__ = "A simple program on python to remove unneeded files from osu! Songs folder"
-__usage__ = "Usage: %s [-h --help] [-v --version] [path to the osu songs directory [--delete-videos] \
+__usage__ = "Usage: %s [-h --help] [-v --version] [path to the osu! Songs directory [--delete-videos] \
 [--delete-hitsounds] [--delete-backgrounds] [--delete-skin-elements] [--delete-storyboard-elements]]"
 
 import os
