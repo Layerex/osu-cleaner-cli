@@ -118,7 +118,6 @@ def main():
     # files(.ini)), which is faster, because there is no need to parse .osu files in that case
     if delete_backgrounds and delete_skin_elements and delete_storyboard_elements:
         delete_images = True
-    if delete_images:
         delete_backgrounds = False
         delete_skin_elements = False
         delete_storyboard_elements = False
@@ -132,7 +131,7 @@ def main():
             os.chdir(directory)
             # Recursively getting all files in the directory
             files = glob.glob(glob.escape(os.getcwd()) + '/**/*.*', recursive=True)
-            if not files == []:
+            if files:
                 for file in files:
                     file_lowercase = file.lower()
                     if (file_lowercase.endswith(extensions["videos"]) and delete_videos) \
