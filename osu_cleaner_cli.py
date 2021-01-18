@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # __name__ = "osu-cleaner-cli"
-__version__ = "1.0.0"
+__version__ = "0.0.2"
 __author__ = "Layerex"
 __desc__ = "A simple program on python to remove unneeded files from osu! Songs directory"
 
