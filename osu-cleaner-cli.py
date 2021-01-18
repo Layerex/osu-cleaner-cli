@@ -104,6 +104,12 @@ def main():
         working_directory_path = input("Enter the path to your osu! songs folder: ")
     os.chdir(working_directory_path)
 
+    # Check if chosen directory is actually osu! Songs folder
+    if not os.path.exists(os.path.join(os.pardir, "osu!.exe")):
+        if not ask_yes_no("Are you really sure that chosen directory is actually osu! Songs folder"
+                          "? Incorrect choice of directory may lead to LOSS OF DATA."):
+            exit()
+
     delete_videos = args.delete_videos
     delete_hitsounds = args.delete_hitsounds
     delete_backgrounds = args.delete_backgrounds
