@@ -248,7 +248,7 @@ def main():
 
 
 def ask_yes_no(question_string):
-    return input("%s (Y/n) " % question_string)[0] in {"Y", "y"}
+    return input("%s (Y/n) " % question_string)[0] in ("Y", "y")
 
 
 def use_re_on_file(file, regex):
