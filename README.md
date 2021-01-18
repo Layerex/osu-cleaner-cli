@@ -1,5 +1,10 @@
 # osu-cleaner-cli
 Script to remove unwanted files from osu! Songs directory. A rewrite of [that](https://github.com/henntix/osu-cleaner) tool, which is not cross-platform and does not work as intended.
+## Installation
+```bash
+pip install osu-cleaner-cli
+```
+
 ## Usage
 ```
 usage: osu-cleaner-cli [-h] [--delete-videos] [--delete-hitsounds] [--delete-backgrounds] [--delete-skin-elements] [--delete-storyboard-elements] [--delete-all] [osu_songs_directory]
