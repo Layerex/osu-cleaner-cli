@@ -236,9 +236,6 @@ def main():
         else:
             files_to_remove.add(os.path.abspath(directory))
 
-    # Probably it would be worth adding an additional loop just to remove all empty directories
-    # after
-
     for file_to_remove in files_to_remove:
         print("Removing %s..." % file_to_remove)
         try:
