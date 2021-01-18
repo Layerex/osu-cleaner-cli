@@ -95,6 +95,10 @@ def main():
         "--delete-storyboard-elements",
         action="store_true",
     )
+    parser.add_argument(
+        "--delete-all",
+        action="store_true",
+    )
 
     args = parser.parse_args()
 
@@ -106,15 +110,19 @@ def main():
 
     # Check if chosen directory is actually osu! Songs folder
     if not os.path.exists(os.path.join(os.pardir, "osu!.exe")):
-        if not ask_yes_no("Are you really sure that chosen directory is actually osu! Songs folder"
-                          "? Incorrect choice of directory may lead to LOSS OF DATA."):
+        if not ask_yes_no(
+            "Are you really sure that chosen directory is actually osu! Songs folder"
+            "? Incorrect choice of directory may lead to LOSS OF DATA."
+        ):
             exit()
 
-    delete_videos = args.delete_videos
-    delete_hitsounds = args.delete_hitsounds
-    delete_backgrounds = args.delete_backgrounds
-    delete_skin_elements = delete_skin_initialization_files = args.delete_skin_elements
-    delete_storyboard_elements = args.delete_storyboard_elements
+    delete_videos = args.delete_videos or args.delete_all
+    delete_hitsounds = args.delete_hitsounds or args.delete_all
+    delete_backgrounds = args.delete_backgrounds or args.delete_all
+    delete_skin_elements = delete_skin_initialization_files = (
+        args.delete_skin_elements or args.delete_all
+    )
+    delete_storyboard_elements = args.delete_storyboard_elements or args.delete_all
 
     if not (
         delete_videos
