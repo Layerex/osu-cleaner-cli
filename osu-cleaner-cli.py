@@ -4,7 +4,7 @@
 # __name__ = "osu-cleaner-cli"
 __version__ = "1.0.0"
 __author__ = "Layerex"
-__desc__ = "A simple program on python to remove unneeded files from osu! Songs folder"
+__desc__ = "A simple program on python to remove unneeded files from osu! Songs directory"
 
 import argparse
 import glob
@@ -73,7 +73,7 @@ def main():
         metavar="osu_songs_directory",
         type=str,
         nargs="?",
-        help="path to your osu! songs directory",
+        help="path to your osu! Songs directory",
     )
     parser.add_argument(
         "--delete-videos",
@@ -105,13 +105,13 @@ def main():
     if args.working_directory_path:
         working_directory_path = args.working_directory_path
     else:
-        working_directory_path = input("Enter the path to your osu! songs folder: ")
+        working_directory_path = input("Enter the path to your osu! Songs directory: ")
     os.chdir(working_directory_path)
 
-    # Check if chosen directory is actually osu! Songs folder
+    # Check if chosen directory is actually osu! Songs directory
     if not os.path.exists(os.path.join(os.pardir, "osu!.exe")):
         if not ask_yes_no(
-            "Are you really sure that chosen directory is actually osu! Songs folder"
+            "Are you really sure that chosen directory is actually osu! Songs directory"
             "? Incorrect choice of directory may lead to LOSS OF DATA."
         ):
             exit()
@@ -133,19 +133,19 @@ def main():
         or delete_storyboard_elements
     ):
         delete_videos = ask_yes_no(
-            "Do you want to delete all videos from your osu! songs folder?"
+            "Do you want to delete all videos from your osu! Songs directory?"
         )
         delete_hitsounds = ask_yes_no(
-            "Do you want to delete all hitsounds from your osu! songs folder?"
+            "Do you want to delete all hitsounds from your osu! Songs directory?"
         )
         delete_backgrounds = ask_yes_no(
-            "Do you want to delete all backgrounds from your osu! songs folder?"
+            "Do you want to delete all backgrounds from your osu! Songs directory?"
         )
         delete_skin_elements = delete_skin_initialization_files = ask_yes_no(
-            "Do you want to delete all skin elements from your osu! songs folder?"
+            "Do you want to delete all skin elements from your osu! Songs directory?"
         )
         delete_storyboard_elements = ask_yes_no(
-            "Do you want to delete all storyboards from your osu! songs folder?"
+            "Do you want to delete all storyboards from your osu! Songs directory?"
         )
 
     # If backgrounds, skin elements and storyboards are deleted we can just delete all images(and
@@ -249,7 +249,7 @@ def main():
         try:
             os.remove(file_to_remove)
         except OSError:
-            print("Failed to remove %s" % file_to_remove)
+            print("Failed to remove %s." % file_to_remove)
 
 
 def ask_yes_no(question_string):
