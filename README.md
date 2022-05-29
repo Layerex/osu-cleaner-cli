@@ -13,7 +13,7 @@ pip install osu-cleaner-cli
 ```
 usage: osu-cleaner-cli [-h] [--delete-videos] [--delete-hitsounds] [--delete-backgrounds] [--delete-skin-elements] [--delete-storyboard-elements] [--delete-all] [osu_songs_directory]
 
-A simple program on python to remove unneeded files from osu! Songs directory
+A simple program on python to remove unneeded files from osu! Songs directory.
 
 positional arguments:
   osu_songs_directory   path to your osu! Songs directory
