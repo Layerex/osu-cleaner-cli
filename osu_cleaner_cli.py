@@ -186,10 +186,6 @@ def main():
                             and delete_hitsounds
                         )
                         or (
-                            file_lowercase.endswith(extensions["storyboards"])
-                            and delete_storyboard_elements
-                        )
-                        or (
                             file_lowercase.endswith(
                                 extensions["skin_initialization_files"]
                             )
@@ -241,6 +237,7 @@ def main():
                                 files_to_remove.add(
                                     os.path.abspath(extracted_file_path)
                                 )
+                        files_to_remove.add(os.abspath(file))
             os.chdir("..")
         else:
             files_to_remove.add(os.path.abspath(directory))
