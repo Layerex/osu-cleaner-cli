@@ -167,8 +167,8 @@ def main():
         if os.path.isdir(directory):
             print(os.path.basename(directory))
             os.chdir(directory)
-            # Recursively getting all files in the directory
-            files = glob.glob(glob.escape(os.getcwd()) + "/**/*", recursive=True)
+            # Recursively get all files in directory
+            files = glob.glob("**/*", recursive=True)
             if files:
                 for file in files:
                     file_lowercase = file.lower()
