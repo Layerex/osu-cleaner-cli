@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# __name__ = "osu-cleaner-cli"
+__prog__ = "osu-cleaner-cli"
 __version__ = "0.0.2"
 __author__ = "Layerex"
 __desc__ = "A simple program on python to remove unneeded files from osu! Songs directory"
@@ -64,7 +64,7 @@ quotation_marks_re = re.compile(r"\"(.*?)\"")
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="osu-cleaner-cli",
+        prog=__prog__,
         description=__desc__,
     )
 
