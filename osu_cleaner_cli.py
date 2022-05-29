@@ -174,27 +174,27 @@ def main():
                     file_lowercase = file.lower()
                     if (
                         (
-                            file_lowercase.endswith(extensions["videos"])
-                            and delete_videos
+                            delete_videos
+                            and file_lowercase.endswith(extensions["videos"])
                         )
                         or (
-                            file_lowercase.endswith(extensions["images"])
-                            and delete_images
+                            delete_images
+                            and file_lowercase.endswith(extensions["images"])
                         )
                         or (
-                            file_lowercase.endswith(extensions["hitsounds"])
-                            and delete_hitsounds
+                            delete_hitsounds
+                            and file_lowercase.endswith(extensions["hitsounds"])
                         )
                         or (
-                            file_lowercase.endswith(
+                            delete_skin_initialization_files
+                            and file_lowercase.endswith(
                                 extensions["skin_initialization_files"]
                             )
-                            and delete_skin_initialization_files
                         )
                         or (
-                            os.path.basename(file_lowercase).startswith(skin_file_names)
+                            delete_skin_elements
+                            and os.path.basename(file_lowercase).startswith(skin_file_names)
                             and file.endswith(extensions["images"])
-                            and delete_skin_elements
                         )
                     ):
                         files_to_remove.add(os.path.abspath(file))
@@ -204,8 +204,8 @@ def main():
                     # additional regex for searching only for backgrounds.
                     # Lines in .osu files specifying backgrounds look like 0,0,"background.png",0,0
                     elif (
-                        file_lowercase.endswith(extensions["beatmaps"])
-                        and delete_backgrounds
+                        delete_backgrounds
+                        and file_lowercase.endswith(extensions["beatmaps"])
                     ):
                         for extracted_file_path in use_re_on_file(
                             file, quotation_marks_re
@@ -218,8 +218,8 @@ def main():
                                     os.path.abspath(extracted_file_path)
                                 )
                     elif (
-                        file_lowercase.endswith(extensions["storyboards"])
-                        and delete_storyboard_elements
+                        delete_storyboard_elements
+                        and file_lowercase.endswith(extensions["storyboards"])
                     ):
                         for extracted_file_path in use_re_on_file(
                             file, quotation_marks_re
