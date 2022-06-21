@@ -179,7 +179,10 @@ def main():
                         )
                         or (
                             delete_images
-                            and file_lowercase.endswith(extensions["images"])
+                            and (
+                                file_lowercase.endswith(extensions["images"])
+                                or file_lowercase.endswith(extensions["storyboards"])
+                            )
                         )
                         or (
                             delete_hitsounds
@@ -237,7 +240,7 @@ def main():
                                 files_to_remove.add(
                                     os.path.abspath(extracted_file_path)
                                 )
-                        files_to_remove.add(os.abspath(file))
+                        files_to_remove.add(os.path.abspath(file))
             os.chdir("..")
         else:
             files_to_remove.add(os.path.abspath(directory))
