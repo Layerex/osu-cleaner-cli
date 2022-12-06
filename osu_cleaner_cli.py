@@ -66,7 +66,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog=__prog__,
         description=__desc__,
-        epilog="If no arguments or only osu! Songs directory specified, script will start in interactive mode."
+        epilog="If no arguments or only osu! Songs directory specified, script will start in interactive mode.",
     )
 
     parser.add_argument(
@@ -173,10 +173,7 @@ def main():
                 for file in files:
                     file_lowercase = file.lower()
                     if (
-                        (
-                            delete_videos
-                            and file_lowercase.endswith(extensions["videos"])
-                        )
+                        (delete_videos and file_lowercase.endswith(extensions["videos"]))
                         or (
                             delete_images
                             and (
@@ -184,15 +181,10 @@ def main():
                                 or file_lowercase.endswith(extensions["storyboards"])
                             )
                         )
-                        or (
-                            delete_hitsounds
-                            and file_lowercase.endswith(extensions["hitsounds"])
-                        )
+                        or (delete_hitsounds and file_lowercase.endswith(extensions["hitsounds"]))
                         or (
                             delete_skin_initialization_files
-                            and file_lowercase.endswith(
-                                extensions["skin_initialization_files"]
-                            )
+                            and file_lowercase.endswith(extensions["skin_initialization_files"])
                         )
                         or (
                             delete_skin_elements
@@ -206,40 +198,24 @@ def main():
                     # the storyboard files might be occasionally deleted. It can be fixed by adding
                     # additional regex for searching only for backgrounds.
                     # Lines in .osu files specifying backgrounds look like 0,0,"background.png",0,0
-                    elif (
-                        delete_backgrounds
-                        and file_lowercase.endswith(extensions["beatmaps"])
-                    ):
-                        for extracted_file_path in use_re_on_file(
-                            file, quotation_marks_re
-                        ):
+                    elif delete_backgrounds and file_lowercase.endswith(extensions["beatmaps"]):
+                        for extracted_file_path in use_re_on_file(file, quotation_marks_re):
                             extracted_file_path_lowercase = extracted_file_path.lower()
                             if extracted_file_path_lowercase.endswith(
                                 extensions["images"]
                             ) and os.path.isfile(extracted_file_path):
-                                files_to_remove.add(
-                                    os.path.abspath(extracted_file_path)
-                                )
-                    elif (
-                        delete_storyboard_elements
-                        and file_lowercase.endswith(extensions["storyboards"])
+                                files_to_remove.add(os.path.abspath(extracted_file_path))
+                    elif delete_storyboard_elements and file_lowercase.endswith(
+                        extensions["storyboards"]
                     ):
-                        for extracted_file_path in use_re_on_file(
-                            file, quotation_marks_re
-                        ):
+                        for extracted_file_path in use_re_on_file(file, quotation_marks_re):
                             extracted_file_path_lowercase = extracted_file_path.lower()
                             if (
-                                extracted_file_path_lowercase.endswith(
-                                    extensions["images"]
-                                )
-                                or extracted_file_path_lowercase.endswith(
-                                    extensions["videos"]
-                                )
+                                extracted_file_path_lowercase.endswith(extensions["images"])
+                                or extracted_file_path_lowercase.endswith(extensions["videos"])
                                 and os.path.isfile(extracted_file_path)
                             ):
-                                files_to_remove.add(
-                                    os.path.abspath(extracted_file_path)
-                                )
+                                files_to_remove.add(os.path.abspath(extracted_file_path))
                         files_to_remove.add(os.path.abspath(file))
             os.chdir("..")
         else:
