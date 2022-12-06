@@ -246,11 +246,11 @@ def main():
             files_to_remove.add(os.path.abspath(directory))
 
     for file_to_remove in files_to_remove:
-        print("Removing %s..." % file_to_remove)
+        print("Removing '%s'..." % file_to_remove)
         try:
             os.remove(file_to_remove)
         except OSError:
-            print("Failed to remove %s." % file_to_remove)
+            print("Failed to remove '%s'." % file_to_remove)
 
 
 def ask_yes_no(question_string):
