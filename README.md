@@ -1,6 +1,6 @@
 # osu-cleaner-cli
 
-Script to remove unwanted files from osu! Songs directory. A rewrite of [that](https://github.com/henntix/osu-cleaner) tool, which is not cross-platform and does not work as intended.
+Remove unwanted files from osu! Songs directory. A rewrite of [that](https://github.com/henntix/osu-cleaner) tool, which is not cross-platform and does not work as intended.
 
 ## Installation
 
@@ -13,7 +13,7 @@ pip install osu-cleaner-cli
 ```
 usage: osu-cleaner-cli [-h] [--delete-videos] [--delete-hitsounds] [--delete-backgrounds] [--delete-skin-elements] [--delete-storyboard-elements] [--delete-all] [osu_songs_directory]
 
-A simple program on python to remove unneeded files from osu! Songs directory.
+Remove unwanted files from osu! Songs directory.
 
 positional arguments:
   osu_songs_directory   path to your osu! Songs directory
