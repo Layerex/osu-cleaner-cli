@@ -66,7 +66,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog=__prog__,
         description=__desc__,
-        epilog="If no arguments or only file path specified, script will start in interactive mode."
+        epilog="If no arguments or only osu! Songs directory specified, script will start in interactive mode."
     )
 
     parser.add_argument(

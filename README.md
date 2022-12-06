@@ -27,5 +27,5 @@ optional arguments:
   --delete-storyboard-elements
   --delete-all
 
-If no arguments or only file path specified, script will start in interactive mode.
+If no arguments or only osu! Songs directory specified, script will start in interactive mode.
 ```
